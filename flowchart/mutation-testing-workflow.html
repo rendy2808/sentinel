@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1000, height=1000, initial-scale=1.0">
+<title>Mutation Testing Workflow</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'JetBrains Mono',monospace;background:#020617;width:1000px;height:1000px;overflow:hidden}
+</style>
+</head>
+<body>
+<svg viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg" width="1000" height="1000">
+<defs>
+<marker id="a" markerWidth="7" markerHeight="5" refX="6" refY="2.5" orient="auto"><polygon points="0 0,7 2.5,0 5" fill="#64748b"/></marker>
+<marker id="ac" markerWidth="7" markerHeight="5" refX="6" refY="2.5" orient="auto"><polygon points="0 0,7 2.5,0 5" fill="#22d3ee"/></marker>
+<marker id="ag" markerWidth="7" markerHeight="5" refX="6" refY="2.5" orient="auto"><polygon points="0 0,7 2.5,0 5" fill="#34d399"/></marker>
+<marker id="aro" markerWidth="7" markerHeight="5" refX="6" refY="2.5" orient="auto"><polygon points="0 0,7 2.5,0 5" fill="#fb7185"/></marker>
+<marker id="aa" markerWidth="7" markerHeight="5" refX="6" refY="2.5" orient="auto"><polygon points="0 0,7 2.5,0 5" fill="#fbbf24"/></marker>
+<pattern id="g" width="28" height="28" patternUnits="userSpaceOnUse"><path d="M28 0L0 0 0 28" fill="none" stroke="#1e293b" stroke-width=".35"/></pattern>
+</defs>
+
+<rect width="1000" height="1000" fill="url(#g)"/>
+
+<!-- HEADER -->
+<rect x="0" y="0" width="1000" height="45" fill="#0f172a"/>
+<circle cx="22" cy="23" r="4" fill="#22d3ee"><animate attributeName="opacity" values="1;0.3;1" dur="2s" repeatCount="indefinite"/></circle>
+<text x="34" y="27" fill="white" font-size="15" font-weight="700">🧬 Mutation Testing Workflow</text>
+<text x="34" y="40" fill="#94a3b8" font-size="8">Rails+RSpec (mutant) · Vue+Vitest (Stryker) · skill: mutation-kill</text>
+
+<!-- ====== ① RUN (y:55-140) ====== -->
+<rect x="12" y="55" width="976" height="90" rx="6" fill="rgba(30,41,59,.12)"/>
+<text x="26" y="76" fill="#64748b" font-size="9" font-weight="600">① RUN MUTATION TOOL</text>
+
+<rect x="26" y="86" width="300" height="48" rx="8" fill="#0f172a" stroke="#fb7185" stroke-width="2.5"/>
+<rect x="26" y="86" width="300" height="48" rx="8" fill="rgba(136,19,55,.22)"/>
+<text x="176" y="107" fill="white" font-size="12" font-weight="700" text-anchor="middle">🐍 Rails: mutant</text>
+<text x="176" y="124" fill="#94a3b8" font-size="9" text-anchor="middle">bundle exec mutant run --use rspec</text>
+
+<rect x="356" y="86" width="300" height="48" rx="8" fill="#0f172a" stroke="#22d3ee" stroke-width="2.5"/>
+<rect x="356" y="86" width="300" height="48" rx="8" fill="rgba(8,51,68,.22)"/>
+<text x="506" y="107" fill="white" font-size="12" font-weight="700" text-anchor="middle">🟩 Vue: Stryker</text>
+<text x="506" y="124" fill="#94a3b8" font-size="9" text-anchor="middle">npx stryker run</text>
+
+<rect x="686" y="86" width="290" height="48" rx="8" fill="rgba(34,211,238,.06)" stroke="#fbbf24" stroke-width=".8" stroke-dasharray="4,4"/>
+<text x="831" y="107" fill="#fbbf24" font-size="11" font-weight="600" text-anchor="middle">⚠️ Scope per class/file</text>
+<text x="831" y="124" fill="#94a3b8" font-size="9" text-anchor="middle">Jangan seluruh codebase!</text>
+
+<!-- Down -->
+<line x1="500" y1="134" x2="500" y2="152" stroke="#22d3ee" stroke-width="2.5" marker-end="url(#ac)"/>
+
+<!-- ====== ② REPORT (y:145-240) ====== -->
+<rect x="12" y="145" width="976" height="100" rx="6" fill="rgba(30,41,59,.12)"/>
+<text x="26" y="166" fill="#64748b" font-size="9" font-weight="600">② BACA REPORT — surviving mutants</text>
+
+<rect x="26" y="176" width="460" height="55" rx="8" fill="#0f172a" stroke="#a78bfa" stroke-width="2"/>
+<rect x="26" y="176" width="460" height="55" rx="8" fill="rgba(76,29,149,.14)"/>
+<text x="256" y="198" fill="white" font-size="11" font-weight="600" text-anchor="middle">mutant output: evil:Class#method:file:line</text>
+<text x="256" y="216" fill="#94a3b8" font-size="8" text-anchor="middle">+ unified diff (apa yg berubah)</text>
+<text x="256" y="228" fill="#475569" font-size="7" text-anchor="middle">stryker: reports/mutation/mutation.json</text>
+
+<rect x="510" y="176" width="460" height="55" rx="8" fill="#0f172a" stroke="#a78bfa" stroke-width="2"/>
+<rect x="510" y="176" width="460" height="55" rx="8" fill="rgba(76,29,149,.14)"/>
+<text x="740" y="196" fill="white" font-size="11" font-weight="600" text-anchor="middle">Klasifikasi mutant</text>
+<text x="740" y="212" fill="#94a3b8" font-size="9" text-anchor="middle">Survived 🔴 = fix · Killed 🟢 = ok</text>
+<text x="740" y="226" fill="#94a3b8" font-size="9" text-anchor="middle">Equivalent ⚪ = skip · NoCoverage = reach first</text>
+
+<!-- Down -->
+<line x1="500" y1="245" x2="500" y2="263" stroke="#22d3ee" stroke-width="2.5" marker-end="url(#ac)"/>
+
+<!-- ====== ③ DECISION (y:255-340) ====== -->
+<rect x="12" y="255" width="976" height="90" rx="6" fill="rgba(30,41,59,.1)"/>
+<text x="26" y="276" fill="#64748b" font-size="9" font-weight="600">③ UNTUK TIAP SURVIVING MUTANT</text>
+
+<!-- Diamond decision -->
+<polygon points="500,285 620,330 500,375 380,330" fill="#0f172a" stroke="#fbbf24" stroke-width="2.5"/>
+<text x="500" y="325" fill="white" font-size="10" font-weight="700" text-anchor="middle">Bisa dibedakan</text>
+<text x="500" y="340" fill="#94a3b8" font-size="8" text-anchor="middle">dengan test?</text>
+
+<!-- Yes path -->
+<text x="630" y="320" fill="#34d399" font-size="9" font-weight="700">YES →</text>
+<rect x="660" y="290" width="310" height="42" rx="8" fill="#0f172a" stroke="#34d399" stroke-width="2"/>
+<rect x="660" y="290" width="310" height="42" rx="8" fill="rgba(6,78,59,.2)"/>
+<text x="815" y="308" fill="white" font-size="11" font-weight="600" text-anchor="middle">📝 Tulis killing test</text>
+<text x="815" y="324" fill="#94a3b8" font-size="8" text-anchor="middle">assert nilai/branch persis yg dimutasi</text>
+
+<!-- No path -->
+<text x="345" y="320" fill="#fb7185" font-size="9" font-weight="700">← NO</text>
+<rect x="26" y="290" width="310" height="42" rx="8" fill="#0f172a" stroke="#fb7185" stroke-width="2"/>
+<rect x="26" y="290" width="310" height="42" rx="8" fill="rgba(136,19,55,.2)"/>
+<text x="181" y="308" fill="white" font-size="11" font-weight="600" text-anchor="middle">⚪ Equivalent mutant → skip</text>
+<text x="181" y="324" fill="#94a3b8" font-size="8" text-anchor="middle">(i++ vs i+=1, dst.) — log & lanjut</text>
+
+<!-- Down -->
+<line x1="815" y1="332" x2="815" y2="360" stroke="#34d399" stroke-width="2" marker-end="url(#ag)"/>
+<line x1="181" y1="332" x2="181" y2="360" stroke="#fb7185" stroke-width="1.5" marker-end="url(#aro)"/>
+
+<!-- ====== ④ RE-RUN (y:350-440) ====== -->
+<rect x="12" y="350" width="976" height="95" rx="6" fill="rgba(30,41,59,.12)"/>
+<text x="26" y="372" fill="#64748b" font-size="9" font-weight="600">④ VERIFY</text>
+
+<rect x="660" y="382" width="310" height="50" rx="8" fill="#0f172a" stroke="#22d3ee" stroke-width="2.5"/>
+<rect x="660" y="382" width="310" height="50" rx="8" fill="rgba(8,51,68,.22)"/>
+<text x="815" y="404" fill="white" font-size="11" font-weight="700" text-anchor="middle">🔁 Re-run tool (scope sama)</text>
+<text x="815" y="422" fill="#22d3ee" font-size="9" text-anchor="300">Survived → Killed?</text>
+
+<rect x="26" y="382" width="300" height="50" rx="8" fill="#0f172a" stroke="#fb7185" stroke-width="2"/>
+<rect x="26" y="382" width="300" height="50" rx="8" fill="rgba(136,19,55,.15)"/>
+<text x="176" y="404" fill="white" font-size="11" font-weight="600" text-anchor="middle">❌ Masih survive?</text>
+<text x="176" y="422" fill="#94a3b8" font-size="8" text-anchor="middle">loop balik → ③ (test belum tepat)</text>
+
+<rect x="356" y="382" width="280" height="50" rx="8" fill="#0f172a" stroke="#34d399" stroke-width="2"/>
+<rect x="356" y="382" width="280" height="50" rx="8" fill="rgba(6,78,59,.15)"/>
+<text x="496" y="404" fill="white" font-size="11" font-weight="600" text-anchor="middle">✅ Killed semua → selesai</text>
+<text x="496" y="422" fill="#34d399" font-size="8" text-anchor="middle">lanjut ke laporan</text>
+
+<!-- Down -->
+<line x1="500" y1="445" x2="500" y2="463" stroke="#22d3ee" stroke-width="2.5" marker-end="url(#ac)"/>
+
+<!-- ====== ⑤ REPORT (y:455-540) ====== -->
+<rect x="12" y="455" width="976" height="90" rx="6" fill="rgba(30,41,59,.12)"/>
+<text x="26" y="476" fill="#64748b" font-size="9" font-weight="600">⑤ LAPORAN AKHIR (format skill)</text>
+
+<rect x="26" y="486" width="950" height="50" rx="6" fill="rgba(30,41,59,.3)" stroke="#1e293b" stroke-width="1"/>
+<text x="42" y="504" fill="#34d399" font-size="9" font-weight="600">Mutation kill — &lt;stack&gt; (&lt;tool&gt;)</text>
+<text x="42" y="520" fill="#94a3b8" font-size="8">Score before: 60% → after: 100% · Killed: 2 mutants · Equivalent (skipped): 1 · Files touched: 2</text>
+
+<!-- ====== STACKS (y:550-680) ====== -->
+<rect x="12" y="550" width="976" height="130" rx="6" fill="rgba(30,41,59,.08)"/>
+<text x="26" y="572" fill="#64748b" font-size="9" font-weight="600">TOOL PER STACK</text>
+
+<rect x="26" y="582" width="460" height="85" rx="8" fill="#0f172a" stroke="#fb7185" stroke-width="2"/>
+<rect x="26" y="582" width="460" height="85" rx="8" fill="rgba(136,19,55,.1)"/>
+<text x="256" y="606" fill="white" font-size="12" font-weight="700" text-anchor="middle">🐍 Rails + RSpec</text>
+<text x="256" y="624" fill="#94a3b8" font-size="9" text-anchor="middle">gem: mutant-rspec · --require ./config/environment</text>
+<text x="256" y="640" fill="#94a3b8" font-size="9" text-anchor="middle">--jobs N (paralel) · target Class#method</text>
+<text x="256" y="658" fill="#fb7185" font-size="8" text-anchor="middle">Ruby >= 3.0</text>
+
+<rect x="510" y="582" width="460" height="85" rx="8" fill="#0f172a" stroke="#22d3ee" stroke-width="2"/>
+<rect x="510" y="582" width="460" height="85" rx="8" fill="rgba(8,51,68,.1)"/>
+<text x="740" y="606" fill="white" font-size="12" font-weight="700" text-anchor="middle">🟩 Vue + Vitest/Jest</text>
+<text x="740" y="624" fill="#94a3b8" font-size="9" text-anchor="middle">@stryker-mutator/core + vitest-runner</text>
+<text x="740" y="640" fill="#94a3b8" font-size="9" text-anchor="middle">coverageAnalysis: perTest · break: null</text>
+<text x="740" y="658" fill="#22d3ee" font-size="8" text-anchor="middle">⚠️ Playwright E2E → jangan di-mutation-test</text>
+
+<!-- ====== PITFALLS (y:690-800) ====== -->
+<rect x="12" y="690" width="976" height="110" rx="6" fill="rgba(251,191,36,.04)" stroke="#fbbf24" stroke-width=".5" stroke-dasharray="4,4"/>
+<text x="26" y="712" fill="#fbbf24" font-size="9" font-weight="700">⚠️ PITFALLS</text>
+<text x="26" y="730" fill="#94a3b8" font-size="9">1. Jangan mutation-test seluruh codebase (lambat) — scope per class/file</text>
+<text x="26" y="746" fill="#94a3b8" font-size="9">2. Rails mutant WAJIB --require ./config/environment, atau semua spec gagal load</text>
+<text x="26" y="762" fill="#94a3b8" font-size="9">3. Stryker coverageAnalysis: 'perTest' jauh lebih cepat dari 'all'</text>
+<text x="26" y="778" fill="#94a3b8" font-size="9">4. Equivalent mutant: jangan buang >2 menit — log & skip</text>
+<text x="26" y="794" fill="#94a3b8" font-size="9">5. break: null dulu, jangan gate CI sebelum tim setuju threshold</text>
+
+<!-- ====== LEGEND (y:810-880) ====== -->
+<rect x="12" y="810" width="976" height="70" rx="6" fill="rgba(30,41,59,.2)"/>
+<text x="26" y="832" fill="#64748b" font-size="9" font-weight="600">📋 Legend</text>
+<rect x="26" y="842" width="12" height="8" rx="2" fill="rgba(136,19,55,.22)" stroke="#fb7185" stroke-width=".5"/>
+<text x="44" y="850" fill="#94a3b8" font-size="8">Rails/mutant</text>
+<rect x="140" y="842" width="12" height="8" rx="2" fill="rgba(8,51,68,.22)" stroke="#22d3ee" stroke-width=".5"/>
+<text x="158" y="850" fill="#94a3b8" font-size="8">Vue/Stryker</text>
+<rect x="250" y="842" width="12" height="8" rx="2" fill="rgba(76,29,149,.14)" stroke="#a78bfa" stroke-width=".5"/>
+<text x="268" y="850" fill="#94a3b8" font-size="8">Report</text>
+<rect x="340" y="842" width="12" height="8" rx="2" fill="rgba(6,78,59,.2)" stroke="#34d399" stroke-width=".5"/>
+<text x="358" y="850" fill="#94a3b8" font-size="8">Action/fix</text>
+<polygon points="470,846 478,850 470,854 462,850" fill="#0f172a" stroke="#fbbf24" stroke-width="1.5"/>
+<text x="486" y="852" fill="#94a3b8" font-size="8">Decision</text>
+<text x="600" y="852" fill="#34d399" font-size="10" font-weight="700">💰 Cost: $0 · no API · local tools only</text>
+
+<!-- footer -->
+<text x="500" y="910" fill="#475569" font-size="8" text-anchor="middle">mutation-testing-toolkit · skill mutation-kill · Claude Code + OpenCode compatible</text>
+
+</svg>
+</body>
+</html>

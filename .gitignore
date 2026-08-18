@@ -1,0 +1,15 @@
+# Ruby
+.bundle/
+vendor/bundle/
+*.gem
+
+# JS
+node_modules/
+reports/
+coverage/
+
+# OS
+.DS_Store
+
+# Mutation reports
+stryker.log

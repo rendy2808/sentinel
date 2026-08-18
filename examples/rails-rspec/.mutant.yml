@@ -1,0 +1,5 @@
+# Mutant config — run with: bundle exec mutant run
+# (Most options are passed as CLI flags; this file sets sensible defaults.)
+includes:
+  - lib
+integration: rspec

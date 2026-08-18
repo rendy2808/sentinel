@@ -1,0 +1,10 @@
+# frozen_string_literal: true
+
+source "https://rubygems.org"
+
+gem "rspec", "~> 3.12"
+
+group :test do
+  # Mutation testing. Requires Ruby >= 3.0.
+  gem "mutant-rspec", "~> 0.12"
+end
