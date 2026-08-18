@@ -29,9 +29,9 @@ body{font-family:'JetBrains Mono',monospace;background:#020617;width:1000px;heig
 <text x="34" y="27" fill="white" font-size="15" font-weight="700">🧬 Mutation Testing Workflow</text>
 <text x="34" y="40" fill="#94a3b8" font-size="8">Rails+RSpec (mutant) · Vue+Vitest (Stryker) · skill: mutation-kill</text>
 
-<!-- ====== ① RUN (y:55-140) ====== -->
+<!-- ====== 1 RUN (y:55-140) ====== -->
 <rect x="12" y="55" width="976" height="90" rx="6" fill="rgba(30,41,59,.12)"/>
-<text x="26" y="76" fill="#64748b" font-size="9" font-weight="600">① RUN MUTATION TOOL</text>
+<text x="26" y="76" fill="#64748b" font-size="9" font-weight="600">1. RUN MUTATION TOOL</text>
 
 <rect x="26" y="86" width="300" height="48" rx="8" fill="#0f172a" stroke="#fb7185" stroke-width="2.5"/>
 <rect x="26" y="86" width="300" height="48" rx="8" fill="rgba(136,19,55,.22)"/>
@@ -45,82 +45,82 @@ body{font-family:'JetBrains Mono',monospace;background:#020617;width:1000px;heig
 
 <rect x="686" y="86" width="290" height="48" rx="8" fill="rgba(34,211,238,.06)" stroke="#fbbf24" stroke-width=".8" stroke-dasharray="4,4"/>
 <text x="831" y="107" fill="#fbbf24" font-size="11" font-weight="600" text-anchor="middle">⚠️ Scope per class/file</text>
-<text x="831" y="124" fill="#94a3b8" font-size="9" text-anchor="middle">Jangan seluruh codebase!</text>
+<text x="831" y="124" fill="#94a3b8" font-size="9" text-anchor="middle">Never the whole codebase!</text>
 
 <!-- Down -->
 <line x1="500" y1="134" x2="500" y2="152" stroke="#22d3ee" stroke-width="2.5" marker-end="url(#ac)"/>
 
-<!-- ====== ② REPORT (y:145-240) ====== -->
+<!-- ====== 2 REPORT (y:145-240) ====== -->
 <rect x="12" y="145" width="976" height="100" rx="6" fill="rgba(30,41,59,.12)"/>
-<text x="26" y="166" fill="#64748b" font-size="9" font-weight="600">② BACA REPORT — surviving mutants</text>
+<text x="26" y="166" fill="#64748b" font-size="9" font-weight="600">2. READ REPORT — surviving mutants</text>
 
 <rect x="26" y="176" width="460" height="55" rx="8" fill="#0f172a" stroke="#a78bfa" stroke-width="2"/>
 <rect x="26" y="176" width="460" height="55" rx="8" fill="rgba(76,29,149,.14)"/>
-<text x="256" y="198" fill="white" font-size="11" font-weight="600" text-anchor="middle">mutant output: evil:Class#method:file:line</text>
-<text x="256" y="216" fill="#94a3b8" font-size="8" text-anchor="middle">+ unified diff (apa yg berubah)</text>
+<text x="256" y="198" fill="white" font-size="11" font-weight="600" text-anchor="middle">mutant: evil:Class#method:file:line</text>
+<text x="256" y="216" fill="#94a3b8" font-size="8" text-anchor="middle">+ unified diff (what changed)</text>
 <text x="256" y="228" fill="#475569" font-size="7" text-anchor="middle">stryker: reports/mutation/mutation.json</text>
 
 <rect x="510" y="176" width="460" height="55" rx="8" fill="#0f172a" stroke="#a78bfa" stroke-width="2"/>
 <rect x="510" y="176" width="460" height="55" rx="8" fill="rgba(76,29,149,.14)"/>
-<text x="740" y="196" fill="white" font-size="11" font-weight="600" text-anchor="middle">Klasifikasi mutant</text>
+<text x="740" y="196" fill="white" font-size="11" font-weight="600" text-anchor="middle">Classify mutants</text>
 <text x="740" y="212" fill="#94a3b8" font-size="9" text-anchor="middle">Survived 🔴 = fix · Killed 🟢 = ok</text>
 <text x="740" y="226" fill="#94a3b8" font-size="9" text-anchor="middle">Equivalent ⚪ = skip · NoCoverage = reach first</text>
 
 <!-- Down -->
 <line x1="500" y1="245" x2="500" y2="263" stroke="#22d3ee" stroke-width="2.5" marker-end="url(#ac)"/>
 
-<!-- ====== ③ DECISION (y:255-340) ====== -->
+<!-- ====== 3 DECISION (y:255-340) ====== -->
 <rect x="12" y="255" width="976" height="90" rx="6" fill="rgba(30,41,59,.1)"/>
-<text x="26" y="276" fill="#64748b" font-size="9" font-weight="600">③ UNTUK TIAP SURVIVING MUTANT</text>
+<text x="26" y="276" fill="#64748b" font-size="9" font-weight="600">3. FOR EACH SURVIVING MUTANT</text>
 
 <!-- Diamond decision -->
 <polygon points="500,285 620,330 500,375 380,330" fill="#0f172a" stroke="#fbbf24" stroke-width="2.5"/>
-<text x="500" y="325" fill="white" font-size="10" font-weight="700" text-anchor="middle">Bisa dibedakan</text>
-<text x="500" y="340" fill="#94a3b8" font-size="8" text-anchor="middle">dengan test?</text>
+<text x="500" y="325" fill="white" font-size="10" font-weight="700" text-anchor="middle">Distinguishable</text>
+<text x="500" y="340" fill="#94a3b8" font-size="8" text-anchor="middle">by a test?</text>
 
 <!-- Yes path -->
 <text x="630" y="320" fill="#34d399" font-size="9" font-weight="700">YES →</text>
 <rect x="660" y="290" width="310" height="42" rx="8" fill="#0f172a" stroke="#34d399" stroke-width="2"/>
 <rect x="660" y="290" width="310" height="42" rx="8" fill="rgba(6,78,59,.2)"/>
-<text x="815" y="308" fill="white" font-size="11" font-weight="600" text-anchor="middle">📝 Tulis killing test</text>
-<text x="815" y="324" fill="#94a3b8" font-size="8" text-anchor="middle">assert nilai/branch persis yg dimutasi</text>
+<text x="815" y="308" fill="white" font-size="11" font-weight="600" text-anchor="middle">📝 Write a killing test</text>
+<text x="815" y="324" fill="#94a3b8" font-size="8" text-anchor="middle">assert the exact mutated value/branch</text>
 
 <!-- No path -->
 <text x="345" y="320" fill="#fb7185" font-size="9" font-weight="700">← NO</text>
 <rect x="26" y="290" width="310" height="42" rx="8" fill="#0f172a" stroke="#fb7185" stroke-width="2"/>
 <rect x="26" y="290" width="310" height="42" rx="8" fill="rgba(136,19,55,.2)"/>
 <text x="181" y="308" fill="white" font-size="11" font-weight="600" text-anchor="middle">⚪ Equivalent mutant → skip</text>
-<text x="181" y="324" fill="#94a3b8" font-size="8" text-anchor="middle">(i++ vs i+=1, dst.) — log & lanjut</text>
+<text x="181" y="324" fill="#94a3b8" font-size="8" text-anchor="middle">(i++ vs i+=1, etc.) — log &amp; continue</text>
 
 <!-- Down -->
 <line x1="815" y1="332" x2="815" y2="360" stroke="#34d399" stroke-width="2" marker-end="url(#ag)"/>
 <line x1="181" y1="332" x2="181" y2="360" stroke="#fb7185" stroke-width="1.5" marker-end="url(#aro)"/>
 
-<!-- ====== ④ RE-RUN (y:350-440) ====== -->
+<!-- ====== 4 RE-RUN (y:350-440) ====== -->
 <rect x="12" y="350" width="976" height="95" rx="6" fill="rgba(30,41,59,.12)"/>
-<text x="26" y="372" fill="#64748b" font-size="9" font-weight="600">④ VERIFY</text>
+<text x="26" y="372" fill="#64748b" font-size="9" font-weight="600">4. VERIFY</text>
 
 <rect x="660" y="382" width="310" height="50" rx="8" fill="#0f172a" stroke="#22d3ee" stroke-width="2.5"/>
 <rect x="660" y="382" width="310" height="50" rx="8" fill="rgba(8,51,68,.22)"/>
-<text x="815" y="404" fill="white" font-size="11" font-weight="700" text-anchor="middle">🔁 Re-run tool (scope sama)</text>
-<text x="815" y="422" fill="#22d3ee" font-size="9" text-anchor="300">Survived → Killed?</text>
+<text x="815" y="404" fill="white" font-size="11" font-weight="700" text-anchor="middle">🔁 Re-run tool (same scope)</text>
+<text x="815" y="422" fill="#22d3ee" font-size="9" text-anchor="middle">Survived → Killed?</text>
 
 <rect x="26" y="382" width="300" height="50" rx="8" fill="#0f172a" stroke="#fb7185" stroke-width="2"/>
 <rect x="26" y="382" width="300" height="50" rx="8" fill="rgba(136,19,55,.15)"/>
-<text x="176" y="404" fill="white" font-size="11" font-weight="600" text-anchor="middle">❌ Masih survive?</text>
-<text x="176" y="422" fill="#94a3b8" font-size="8" text-anchor="middle">loop balik → ③ (test belum tepat)</text>
+<text x="176" y="404" fill="white" font-size="11" font-weight="600" text-anchor="middle">❌ Still surviving?</text>
+<text x="176" y="422" fill="#94a3b8" font-size="8" text-anchor="middle">loop back → 3 (test not precise)</text>
 
 <rect x="356" y="382" width="280" height="50" rx="8" fill="#0f172a" stroke="#34d399" stroke-width="2"/>
 <rect x="356" y="382" width="280" height="50" rx="8" fill="rgba(6,78,59,.15)"/>
-<text x="496" y="404" fill="white" font-size="11" font-weight="600" text-anchor="middle">✅ Killed semua → selesai</text>
-<text x="496" y="422" fill="#34d399" font-size="8" text-anchor="middle">lanjut ke laporan</text>
+<text x="496" y="404" fill="white" font-size="11" font-weight="600" text-anchor="middle">✅ All killed → done</text>
+<text x="496" y="422" fill="#34d399" font-size="8" text-anchor="middle">proceed to report</text>
 
 <!-- Down -->
 <line x1="500" y1="445" x2="500" y2="463" stroke="#22d3ee" stroke-width="2.5" marker-end="url(#ac)"/>
 
-<!-- ====== ⑤ REPORT (y:455-540) ====== -->
+<!-- ====== 5 REPORT (y:455-540) ====== -->
 <rect x="12" y="455" width="976" height="90" rx="6" fill="rgba(30,41,59,.12)"/>
-<text x="26" y="476" fill="#64748b" font-size="9" font-weight="600">⑤ LAPORAN AKHIR (format skill)</text>
+<text x="26" y="476" fill="#64748b" font-size="9" font-weight="600">5. FINAL REPORT (skill format)</text>
 
 <rect x="26" y="486" width="950" height="50" rx="6" fill="rgba(30,41,59,.3)" stroke="#1e293b" stroke-width="1"/>
 <text x="42" y="504" fill="#34d399" font-size="9" font-weight="600">Mutation kill — &lt;stack&gt; (&lt;tool&gt;)</text>
@@ -128,30 +128,30 @@ body{font-family:'JetBrains Mono',monospace;background:#020617;width:1000px;heig
 
 <!-- ====== STACKS (y:550-680) ====== -->
 <rect x="12" y="550" width="976" height="130" rx="6" fill="rgba(30,41,59,.08)"/>
-<text x="26" y="572" fill="#64748b" font-size="9" font-weight="600">TOOL PER STACK</text>
+<text x="26" y="572" fill="#64748b" font-size="9" font-weight="600">TOOLS PER STACK</text>
 
 <rect x="26" y="582" width="460" height="85" rx="8" fill="#0f172a" stroke="#fb7185" stroke-width="2"/>
 <rect x="26" y="582" width="460" height="85" rx="8" fill="rgba(136,19,55,.1)"/>
 <text x="256" y="606" fill="white" font-size="12" font-weight="700" text-anchor="middle">🐍 Rails + RSpec</text>
 <text x="256" y="624" fill="#94a3b8" font-size="9" text-anchor="middle">gem: mutant-rspec · --require ./config/environment</text>
-<text x="256" y="640" fill="#94a3b8" font-size="9" text-anchor="middle">--jobs N (paralel) · target Class#method</text>
-<text x="256" y="658" fill="#fb7185" font-size="8" text-anchor="middle">Ruby >= 3.0</text>
+<text x="256" y="640" fill="#94a3b8" font-size="9" text-anchor="middle">--jobs N (parallel) · target Class#method</text>
+<text x="256" y="658" fill="#fb7185" font-size="8" text-anchor="middle">Ruby &gt;= 3.0</text>
 
 <rect x="510" y="582" width="460" height="85" rx="8" fill="#0f172a" stroke="#22d3ee" stroke-width="2"/>
 <rect x="510" y="582" width="460" height="85" rx="8" fill="rgba(8,51,68,.1)"/>
 <text x="740" y="606" fill="white" font-size="12" font-weight="700" text-anchor="middle">🟩 Vue + Vitest/Jest</text>
 <text x="740" y="624" fill="#94a3b8" font-size="9" text-anchor="middle">@stryker-mutator/core + vitest-runner</text>
 <text x="740" y="640" fill="#94a3b8" font-size="9" text-anchor="middle">coverageAnalysis: perTest · break: null</text>
-<text x="740" y="658" fill="#22d3ee" font-size="8" text-anchor="middle">⚠️ Playwright E2E → jangan di-mutation-test</text>
+<text x="740" y="658" fill="#22d3ee" font-size="8" text-anchor="middle">⚠️ Playwright E2E → don't mutation-test it</text>
 
 <!-- ====== PITFALLS (y:690-800) ====== -->
 <rect x="12" y="690" width="976" height="110" rx="6" fill="rgba(251,191,36,.04)" stroke="#fbbf24" stroke-width=".5" stroke-dasharray="4,4"/>
 <text x="26" y="712" fill="#fbbf24" font-size="9" font-weight="700">⚠️ PITFALLS</text>
-<text x="26" y="730" fill="#94a3b8" font-size="9">1. Jangan mutation-test seluruh codebase (lambat) — scope per class/file</text>
-<text x="26" y="746" fill="#94a3b8" font-size="9">2. Rails mutant WAJIB --require ./config/environment, atau semua spec gagal load</text>
-<text x="26" y="762" fill="#94a3b8" font-size="9">3. Stryker coverageAnalysis: 'perTest' jauh lebih cepat dari 'all'</text>
-<text x="26" y="778" fill="#94a3b8" font-size="9">4. Equivalent mutant: jangan buang >2 menit — log & skip</text>
-<text x="26" y="794" fill="#94a3b8" font-size="9">5. break: null dulu, jangan gate CI sebelum tim setuju threshold</text>
+<text x="26" y="730" fill="#94a3b8" font-size="9">1. Never mutation-test the whole codebase (slow) — scope per class/file</text>
+<text x="26" y="746" fill="#94a3b8" font-size="9">2. Rails mutant REQUIRES --require ./config/environment, or every spec fails to load</text>
+<text x="26" y="762" fill="#94a3b8" font-size="9">3. Stryker coverageAnalysis: 'perTest' is much faster than 'all'</text>
+<text x="26" y="778" fill="#94a3b8" font-size="9">4. Equivalent mutant: don't spend &gt;2 min — log &amp; skip</text>
+<text x="26" y="794" fill="#94a3b8" font-size="9">5. Keep break: null until the team agrees on a threshold</text>
 
 <!-- ====== LEGEND (y:810-880) ====== -->
 <rect x="12" y="810" width="976" height="70" rx="6" fill="rgba(30,41,59,.2)"/>
