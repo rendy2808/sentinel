@@ -1,7 +1,8 @@
-# Mutation Testing Toolkit
+# Sentinel 🤖
 
-Mutation testing untuk tim: skill AI (`mutation-kill`) + example projects siap
-jalan untuk **Rails + RSpec** (`mutant` gem) dan **Vue + Vitest** (Stryker).
+Hunt and kill surviving mutants. Mutation testing toolkit untuk tim:
+skill AI (`mutation-kill`) + example projects siap jalan untuk **Rails + RSpec**
+(`mutant` gem) dan **Vue + Vitest** (Stryker).
 
 ## Apa ini?
 
@@ -13,11 +14,13 @@ test kamu.
 ## Struktur repo
 
 ```
-mutation-testing-toolkit/
+sentinel/
 ├── README.md
 ├── skills/
 │   └── mutation-kill/
 │       └── SKILL.md              # Skill AI (Claude Code + OpenCode)
+├── docs/
+│   └── mutation-testing-explained.md   # Penjelasan bilingual
 ├── examples/
 │   ├── rails-rspec/              # Ruby + RSpec + mutant
 │   │   ├── Gemfile
