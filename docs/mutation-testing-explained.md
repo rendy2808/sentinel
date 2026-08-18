@@ -79,6 +79,19 @@ run tool → read surviving mutants → write killing tests → re-run → score
 - ✅ Shared libraries
 - ❌ CRUD boilerplate, UI glue, small projects (overkill)
 
+### Unit test vs mutation testing
+
+| | **Unit test** | **Mutation testing** |
+|---|---|---|
+| **Tests** | your code | your tests |
+| **Asks** | "Does this work?" | "Would the tests catch a bug?" |
+| **Measures** | % of lines executed | % of mutants killed |
+| **Catches** | bugs in code | gaps in tests |
+| **Runs** | every commit | periodically (weekly CI) |
+
+They're complementary: unit tests *write* the safety net, mutation testing
+*checks* the net for holes.
+
 ---
 
 ## 🇮🇩 Bahasa Indonesia
@@ -154,3 +167,16 @@ jalankan tool → baca surviving mutants → tulis killing test → re-run → s
 - ✅ Core business logic (billing, pricing, validasi)
 - ✅ Library yang dipake banyak orang
 - ❌ CRUD boilerplate, UI glue, project kecil (overkill)
+
+### Unit test vs mutation testing
+
+| | **Unit test** | **Mutation testing** |
+|---|---|---|
+| **Ngetes** | kode kamu | test kamu |
+| **Nanya** | "Ini jalan ga?" | "Test-nya nangkep bug ga?" |
+| **Ngukur** | % baris ke-eksekusi | % mutant kebunuh |
+| **Nangkep** | bug di kode | celah di test |
+| **Jalan** | tiap commit | berkala (CI mingguan) |
+
+Keduanya saling melengkapi: unit test *nulis* jaring pengaman, mutation
+testing *ngecek* jaringnya bolong atau enggak.
